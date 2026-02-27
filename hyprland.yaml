@@ -34,6 +34,7 @@ aur-packages:
   - 'telegram-desktop'
   - 'kitty'
   - 'github-cli'
+  - 'ly'
   
 services:
-  - 'sddm'
+  - 'ly'
