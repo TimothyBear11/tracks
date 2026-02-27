@@ -13,6 +13,7 @@ packages:
   - 'xdg-desktop-portal'
   - 'python3'
   - 'neovim'
+  - 'ly'
 
 aur-packages: 
   - 'zsh'
@@ -34,7 +35,6 @@ aur-packages:
   - 'telegram-desktop'
   - 'kitty'
   - 'github-cli'
-  - 'ly'
   
 services:
   - 'ly'
