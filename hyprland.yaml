@@ -13,7 +13,7 @@ packages:
   - 'xdg-desktop-portal'
   - 'python'  
   - 'neovim'
-  - 'sddm'
+  - 'ly'
   - 'zsh'
   - 'zsh-autosuggestions'
   - 'zsh-syntax-highlighting'
@@ -38,11 +38,10 @@ aur-packages:
   - 'python-pywalfox'
   
 services:
-  - 'sddm'
+  - 'ly'
 
 commands:
-  - 'useradd -m sddm -s /bin/false'
-  - 'usermod -aG video sddm'
+  - 'usermod -aG video ly'
   - |
     cat << EOF > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
     [Users]
