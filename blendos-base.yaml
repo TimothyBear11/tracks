@@ -134,7 +134,7 @@ services:
   - 'NetworkManager'
   - 'power-profiles-daemon'
   - 'pipewire'
-  - 'pipewire-pulse
+  - 'pipewire-pulse'
   - 'wireplumber'
 
 user-services:
