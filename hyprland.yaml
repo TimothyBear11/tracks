@@ -35,5 +35,15 @@ aur-packages:
   - 'spotify'
   - 'vesktop'
   - 'python-pywalfox'
+  
 services:
   - 'sddm'
+
+commands:
+  - 'useradd -m sddm -s /bin/false'
+  - 'usermod -aG video sddm'
+  - |
+    cat << EOF > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
+    [Users]
+    HideUsers=gnome-initial-setup
+    EOF
