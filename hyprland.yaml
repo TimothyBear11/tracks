@@ -11,10 +11,9 @@ packages:
   - 'cliphist'
   - 'cava'
   - 'xdg-desktop-portal'
-  - 'python'  # Fixed: changed from python3
+  - 'python'  
   - 'neovim'
-  - 'ly'
-  # Moved from aur-packages to official packages:
+  - 'sddm'
   - 'zsh'
   - 'zsh-autosuggestions'
   - 'zsh-syntax-highlighting'
@@ -36,6 +35,7 @@ aur-packages:
   - 'protonup-qt'
   - 'spotify'
   - 'vesktop'
+  - 'python-pywalfox'
   
 services:
-  - 'ly'
+  - 'sddm'
