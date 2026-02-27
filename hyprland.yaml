@@ -23,7 +23,6 @@ packages:
   - 'telegram-desktop'
   - 'kitty'
   - 'github-cli'
-
 aur-packages: 
   - 'zsh-theme-powerlevel10k'
   - 'ttf-meslo-nerd-font-powerlevel10k'
@@ -36,6 +35,5 @@ aur-packages:
   - 'spotify'
   - 'vesktop'
   - 'python-pywalfox'
-  
 services:
   - 'sddm'
