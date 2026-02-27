@@ -1,0 +1,37 @@
+impl: 'https://github.com/TimothyBear11/tracks/raw/main'
+
+track: 'blendos-base'
+
+packages:
+  - 'hyprland'
+  - 'hyprland-guiutils'
+  - 'noctalia-shell'
+  - 'wlsunset'
+  - 'ddcutil'
+  - 'cliphist'
+  - 'cava'
+  - 'xdg-desktop-portal'
+  - 'python3'
+  - 'neovim'
+
+aur-packages: 
+  - 'zsh'
+  - 'zsh-theme-powerlevel10k'
+  - 'zsh-autosuggestions'
+  - 'zsh-syntax-highlighting'
+  - 'thefuck'
+  - 'ttf-meslo-nerd-font-powerlevel10k'
+  - 'ttf-cascadia-code-nerd'
+  - 'steam'
+  - 'heroic-games-launcher'
+  - 'btop'
+  - 'floorp-bin'
+  - 'antigravity'
+  - 'ani-cli'
+  - 'protonup-qt'
+  - 'spotify'
+  - 'vesktop'
+  - 'telegram-desktop'
+  
+services:
+  - 'cosmic-greeter'
