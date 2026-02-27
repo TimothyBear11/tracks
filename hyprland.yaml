@@ -32,6 +32,8 @@ aur-packages:
   - 'spotify'
   - 'vesktop'
   - 'telegram-desktop'
+  - 'kitty'
+  - 'ly'
   
 services:
-  - 'cosmic-greeter'
+  - 'ly'
