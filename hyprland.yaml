@@ -24,6 +24,8 @@ packages:
   - 'kitty'
   - 'github-cli'
   - 'dolphin'
+  - 'qt5ct'
+  - 'qt6ct'
   
 aur-packages: 
   - 'zsh-theme-powerlevel10k'
@@ -38,6 +40,7 @@ aur-packages:
   - 'vesktop'
   - 'python-pywalfox'
   - 'kdeconnect'
+  - 'spicetify-cli'
   
 services:
   - 'sddm'
