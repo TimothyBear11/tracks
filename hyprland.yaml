@@ -33,7 +33,7 @@ aur-packages:
   - 'vesktop'
   - 'telegram-desktop'
   - 'kitty'
-  - 'ly'
+  - 'github-cli'
   
 services:
-  - 'ly'
+  - 'sddm'
