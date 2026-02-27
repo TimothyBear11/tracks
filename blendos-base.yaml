@@ -124,12 +124,18 @@ packages:
   - 'networkmanager'
   - 'cups'
   - 'ttf-jetbrains-mono'
+  - 'pipewire'
+  - 'pipewire-pulse'
+  - 'wireplumber'
 
 services:
   - 'cups'
   - 'bluetooth'
   - 'NetworkManager'
   - 'power-profiles-daemon'
+  - 'pipewire'
+  - 'pipewire-pulse
+  - 'wireplumber'
 
 user-services:
   - 'blend-files'
