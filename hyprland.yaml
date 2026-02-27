@@ -11,30 +11,31 @@ packages:
   - 'cliphist'
   - 'cava'
   - 'xdg-desktop-portal'
-  - 'python3'
+  - 'python'  # Fixed: changed from python3
   - 'neovim'
   - 'ly'
-
-aur-packages: 
+  # Moved from aur-packages to official packages:
   - 'zsh'
-  - 'zsh-theme-powerlevel10k'
   - 'zsh-autosuggestions'
   - 'zsh-syntax-highlighting'
   - 'thefuck'
+  - 'steam'
+  - 'btop'
+  - 'telegram-desktop'
+  - 'kitty'
+  - 'github-cli'
+
+aur-packages: 
+  - 'zsh-theme-powerlevel10k'
   - 'ttf-meslo-nerd-font-powerlevel10k'
   - 'ttf-cascadia-code-nerd'
-  - 'steam'
   - 'heroic-games-launcher'
-  - 'btop'
   - 'floorp-bin'
   - 'antigravity'
   - 'ani-cli'
   - 'protonup-qt'
   - 'spotify'
   - 'vesktop'
-  - 'telegram-desktop'
-  - 'kitty'
-  - 'github-cli'
   
 services:
   - 'ly'
