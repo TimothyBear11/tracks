@@ -3,53 +3,128 @@ impl: 'https://github.com/TimothyBear11/tracks/raw/main'
 track: 'blendos-base'
 
 packages:
+  # Hyprland Core
   - 'hyprland'
   - 'hyprland-guiutils'
-  - 'noctalia-shell'
-  - 'wlsunset'
-  - 'ddcutil'
-  - 'cliphist'
-  - 'cava'
+  - 'xdg-desktop-portal-hyprland'
   - 'xdg-desktop-portal'
-  - 'python'  
-  - 'neovim'
-  - 'sddm'
-  - 'zsh'
-  - 'zsh-autosuggestions'
-  - 'zsh-syntax-highlighting'
-  - 'thefuck'
-  - 'steam'
-  - 'btop'
-  - 'telegram-desktop'
-  - 'kitty'
-  - 'github-cli'
-  - 'dolphin'
+  - 'polkit-kde-agent'
+  - 'qt5-wayland'
+  - 'qt6-wayland'
   - 'qt5ct'
   - 'qt6ct'
   
+  # Hyprland Tools
+  - 'noctalia-shell'
+  - 'wlsunset'
+  - 'cliphist'
+  - 'grim'
+  - 'slurp'
+  - 'swappy'
+  - 'wl-clipboard'
+  - 'brightnessctl'
+  - 'playerctl'
+  - 'ddcutil'
+  
+  # Audio/Video
+  - 'pavucontrol'
+  - 'cava'
+  
+  # Shell/Terminal
+  - 'kitty'
+  - 'zsh'
+  - 'zsh-autosuggestions'
+  - 'zsh-syntax-highlighting'
+  - 'neovim'
+  - 'btop'
+  
+  # CLI Tools
+  - 'eza'
+  - 'bat'
+  - 'fd'
+  - 'fzf'
+  - 'zoxide'
+  - 'trash-cli'
+  - 'inxi'
+  - 'github-cli'
+  
+  # Network
+  - 'network-manager-applet'
+  
+  # File Manager
+  - 'dolphin'
+  
+  # Development
+  - 'python'
+  
+  # ROCm / AI
+  - 'rocm-hip-sdk'
+  - 'rocm-opencl-sdk'
+  - 'rocm-smi-lib'
+  - 'rocminfo'
+  
+  # Gaming
+  - 'steam'
+  - 'wine-staging'
+  - 'winetricks'
+  
+  # Apps
+  - 'telegram-desktop'
+  
+  # Login Manager
+  - 'sddm'
+  
 aur-packages: 
+  # Shell Theme
   - 'zsh-theme-powerlevel10k'
   - 'ttf-meslo-nerd-font-powerlevel10k'
   - 'ttf-cascadia-code-nerd'
+  
+  # Gaming
   - 'heroic-games-launcher'
-  - 'floorp-bin'
-  - 'antigravity'
-  - 'ani-cli'
   - 'protonup-qt'
+  
+  # Apps
+  - 'floorp-bin'
   - 'spotify'
   - 'vesktop'
-  - 'python-pywalfox'
+  - 'antigravity'
+  - 'ani-cli'
   - 'kdeconnect'
   - 'spicetify-cli'
   
+  # Theming
+  - 'python-pywalfox'
+  
+  # AI
+  - 'ollama-rocm'
+  
 services:
   - 'sddm'
+  - 'ollama'
 
 commands:
+  # SDDM Setup
   - 'useradd -m sddm -s /bin/false'
   - 'usermod -aG video sddm'
   - |
-    cat << EOF > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
+    cat << EOFINNER > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
     [Users]
     HideUsers=gnome-initial-setup
-    EOF
+    EOFINNER
+  
+  # User Groups (for ROCm)
+  - 'usermod -aG render,video blend'
+  
+  # Deploy dotfiles from GitHub
+  - 'mkdir -p /etc/skel/.config'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/hypr/hyprland.conf -o /etc/skel/.config/hypr/hyprland.conf --create-dirs'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/kitty/kitty.conf -o /etc/skel/.config/kitty/kitty.conf --create-dirs'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.zshrc -o /etc/skel/.zshrc'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.p10k.zsh -o /etc/skel/.p10k.zsh'
+  
+  # Create OpenClaw workspace structure
+  - 'mkdir -p /etc/skel/.openclaw/workspace'
+  
+  # Set default shell to zsh
+  - 'chsh -s /bin/zsh blend'
