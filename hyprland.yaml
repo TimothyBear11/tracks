@@ -16,11 +16,9 @@ packages:
   
   # Hyprland Tools
   - 'noctalia-shell'
+  - 'noctalia-qs'
   - 'wlsunset'
   - 'cliphist'
-  - 'grim'
-  - 'slurp'
-  - 'swappy'
   - 'wl-clipboard'
   - 'brightnessctl'
   - 'playerctl'
@@ -53,6 +51,7 @@ packages:
   
   # File Manager
   - 'dolphin'
+  - 'ark'
   
   # Development
   - 'python'
@@ -92,6 +91,7 @@ aur-packages:
   - 'ani-cli'
   - 'kdeconnect'
   - 'spicetify-cli'
+  - 'kate'
   
   # Theming
   - 'python-pywalfox'
