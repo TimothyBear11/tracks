@@ -15,8 +15,7 @@ packages:
   - 'qt6ct'
   
   # Hyprland Tools
-  - 'noctalia-shell'
-  - 'noctalia-qs'
+
   - 'wlsunset'
   - 'cliphist'
   - 'wl-clipboard'
@@ -92,6 +91,8 @@ aur-packages:
   - 'kdeconnect'
   - 'spicetify-cli'
   - 'kate'
+  - 'noctalia-shell'
+  - 'noctalia-qs'
   
   # Theming
   - 'python-pywalfox'
