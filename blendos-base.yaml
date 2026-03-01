@@ -139,3 +139,6 @@ services:
 
 user-services:
   - 'blend-files'
+
+commands:
+  - 'pacman -Rns quickshell --noconfirm || true'
