@@ -1,3 +1,7 @@
+# system.yaml - Copy this to /system.yaml on blendOS after install
+# This is the LOCAL config file that blendOS uses
+# It's populated from your track: https://github.com/TimothyBear11/tracks/raw/main/hyprland.yaml
+
 impl: 'https://github.com/TimothyBear11/tracks/raw/main'
 
 track: 'blendos-base'
@@ -47,6 +51,8 @@ packages:
   - 'trash-cli'
   - 'inxi'
   - 'github-cli'
+  - 'curl'
+  - 'wget'
   
   # Network
   - 'network-manager-applet'
@@ -56,6 +62,8 @@ packages:
   
   # Development
   - 'python'
+  - 'nodejs'
+  - 'npm'
   
   # ROCm / AI
   - 'rocm-hip-sdk'
@@ -116,7 +124,7 @@ commands:
     HideUsers=gnome-initial-setup
     EOFINNER
   
-  # User Groups (for ROCm)
+  # User Groups (for ROCm) - REPLACE 'blend' with your actual username!
   - 'usermod -aG render,video blend'
   
   # Deploy dotfiles from GitHub
@@ -129,5 +137,5 @@ commands:
   # Create OpenClaw workspace structure
   - 'mkdir -p /etc/skel/.openclaw/workspace'
   
-  # Set default shell to zsh
+  # Set default shell to zsh - REPLACE 'blend' with your actual username!
   - 'chsh -s /bin/zsh blend'
