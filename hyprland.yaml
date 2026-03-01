@@ -108,27 +108,33 @@ services:
   - 'ollama'
 
 commands:
-  # SDDM Setup
-  - 'useradd -m sddm -s /bin/false'
+  # SDDM Setup (This usually works as it's system-level)
+  - 'useradd -m sddm -s /bin/false || true'
   - 'usermod -aG video sddm'
   - |
-    cat << EOFINNER > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
+    mkdir -p /usr/lib/sddm/sddm.conf.d/
+    cat << EOF > /usr/lib/sddm/sddm.conf.d/no-gnome-initial-setup.conf
     [Users]
     HideUsers=gnome-initial-setup
-    EOFINNER
+    EOF
   
-  # User Groups (for ROCm)
+  # User Groups - Added 'tbear' explicitly if that's your username
+  - 'usermod -aG render,video tbear'
   - 'usermod -aG render,video blend'
   
-  # Deploy dotfiles from GitHub
-  - 'mkdir -p /etc/skel/.config'
-  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/hypr/hyprland.conf -o /etc/skel/.config/hypr/hyprland.conf --create-dirs'
-  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/kitty/kitty.conf -o /etc/skel/.config/kitty/kitty.conf --create-dirs'
-  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.zshrc -o /etc/skel/.zshrc'
-  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.p10k.zsh -o /etc/skel/.p10k.zsh'
+  # Deploy dotfiles directly to the LIVE home directory
+  # We use /home/tbear/ instead of /etc/skel/
+  - 'mkdir -p /home/tbear/.config/hypr /home/tbear/.config/kitty || true'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/hypr/hyprland.conf -o /home/tbear/.config/hypr/hyprland.conf'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/kitty/kitty.conf -o /home/tbear/.config/kitty/kitty.conf'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.zshrc -o /home/tbear/.zshrc'
+  - 'curl -fsSL https://raw.githubusercontent.com/TimothyBear11/Dotfiles/master/.p10k.zsh -o /home/tbear/.p10k.zsh'
   
-  # Create OpenClaw workspace structure
-  - 'mkdir -p /etc/skel/.openclaw/workspace'
+  # Fix Ownership (Crucial! Root runs these commands, so it will own your home files otherwise)
+  - 'chown -R tbear:tbear /home/tbear/'
   
-  # Set default shell to zsh
-  - 'chsh -s /bin/zsh blend'
+  # Set default shell
+  - 'chsh -s /bin/zsh tbear'
+  
+  # The "Path Clearer" for your current conflict
+  - 'pacman -Rdd quickshell --noconfirm || true'
