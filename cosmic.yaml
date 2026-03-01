@@ -15,3 +15,6 @@ packages:
   - 'waydroid-image'
 services:
   - 'cosmic-greeter'
+
+commands:
+  - 'pacman -Rns quickshell'
