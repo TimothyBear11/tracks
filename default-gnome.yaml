@@ -9,10 +9,6 @@ packages:
   - 'gnome-initial-setup'
   - 'filesystem-blend'
   - 'firefox'
-  - 'fprintd'
-
-services:
-  - 'fprintd'
 
 aur-packages:
   - 'gvfs-google-git'

@@ -13,6 +13,7 @@ packages:
   - 'coreutils'
   - 'file'
   - 'filesystem-blend'
+  - 'fprintd'
   - 'findutils'
   - 'gawk'
   - 'gcc-libs'
@@ -135,6 +136,7 @@ services:
   - 'bluetooth'
   - 'NetworkManager'
   - 'power-profiles-daemon'
+  - 'fprintd'
 
 user-services:
   - 'blend-files'
