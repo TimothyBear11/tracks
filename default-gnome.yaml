@@ -10,10 +10,6 @@ packages:
   - 'filesystem-blend'
   - 'firefox'
 
-package-repos:
-  - name: 'chaotic-aur'
-    repo-url: 'https://cdn-mirror.chaotic.cx/$repo/$arch'
-
 commands:
   - 'find /usr/share/metainfo ! -name "org.freedesktop.appstream.cli.metainfo.xml" ! -name "org.freedesktop.appstream.compose.metainfo.xml" ! -name "org.gnome.Software.Plugin.Flatpak.metainfo.xml" ! -name "org.gnome.Software.Plugin.Fwupd.metainfo.xml"  -type f -exec rm -f {} +'
   - 'rm -f /usr/share/applications/stoken-gui.desktop'
