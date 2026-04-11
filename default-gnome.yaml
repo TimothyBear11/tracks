@@ -2,6 +2,9 @@ impl: 'https://github.com/blend-os/tracks/raw/main'
 
 track: 'gnome'
 
+
+# chaotic-aur is added by akshara
+
 packages:
   - 'chaotic-aur/gnome-shell-extension-dash-to-dock'
   - 'chaotic-aur/gnome-shell-extension-blur-my-shell'
