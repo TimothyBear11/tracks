@@ -3,12 +3,16 @@ impl: 'https://github.com/blend-os/tracks/raw/main'
 track: 'gnome'
 
 packages:
-  - 'gnome-shell-extension-dash-to-dock'
-  - 'gnome-shell-extension-blur-my-shell'
+  - 'chaotic-aur/gnome-shell-extension-dash-to-dock'
+  - 'chaotic-aur/gnome-shell-extension-blur-my-shell'
   - 'gnome-shell-extension-appindicator'
   - 'gnome-initial-setup'
   - 'filesystem-blend'
   - 'firefox'
+
+package-repos:
+  - name: 'chaotic-aur'
+    repo-url: 'https://cdn-mirror.chaotic.cx/$repo/$arch'
 
 commands:
   - 'find /usr/share/metainfo ! -name "org.freedesktop.appstream.cli.metainfo.xml" ! -name "org.freedesktop.appstream.compose.metainfo.xml" ! -name "org.gnome.Software.Plugin.Flatpak.metainfo.xml" ! -name "org.gnome.Software.Plugin.Fwupd.metainfo.xml"  -type f -exec rm -f {} +'
