@@ -9,3 +9,8 @@ packages:
 
 services:
   - 'sddm'
+
+commands:
+  - 'useradd -m sddm -s /bin/false'
+  - 'usermod -aG video sddm'
+  - 'systemctl enable sddm'

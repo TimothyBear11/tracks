@@ -10,3 +10,6 @@ packages:
 
 services:
   - 'lightdm'
+
+commands:
+  - 'systemctl enable lightdm'
